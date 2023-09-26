@@ -1,0 +1,32 @@
+
+<article class="article article-type-post show">
+  <header class="article-header">
+  <h1 class="article-title" itemprop="name">
+    <%= page.title %>
+  </h1>
+</br>
+    <% if (site.categories.length){ %>
+  <div class="category-all-page">
+    <div class="tag-cloud">
+	<h1>🪄标签分类:<h1>
+    <%- tagcloud({
+      min_font: 20, 
+      max_font: 35, 
+      amount: 999
+    }) %>
+  </div>
+  </br>
+    <h1 style="color:linear-gradient(135deg,#17ead9,#6078ea)">&nbsp;&nbsp;&nbsp;🪄文章分类:</h1>
+    <%- list_categories(site.categories, {
+      show_count: true,
+      class: 'category-list-item',
+      style: 'list',
+      depth:2,    
+      separator: ''
+    }) %>
+  </div>
+  <% } %>
+  </header>
+</article>
+
+
